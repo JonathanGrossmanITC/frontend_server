@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <input type="text" id="first" />
+    <input type="text" id="last" />
+    <input type="text" id="languages" />
+    <input type="text" id="score" />
+    <div>
+      <button type="text" id="button">Submit</button>
+    </div>
+    <script>
+      const button = document.getElementById("button");
+
+      const sendDataToDB = () => {
+        const first = document.getElementById("first").value;
+        const last = document.getElementById("last").value;
+        const languages = document.getElementById("languages").value;
+        const score = document.getElementById("score").value;
+        const data = {
+          first: first,
+          last: last,
+          languages: [languages],
+          score: score,
+        };
+        fetch("http://localhost:3000/add-user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      };
+      button.addEventListener("click", sendDataToDB);
+    </script>
+  </body>
+</html>
