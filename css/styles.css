@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+div {
+  border-radius: 5px;
+  color: orange;
+  font-size: 18px;
+  padding: 10px;
+  /* margin: 10px; */
+}
+
+.title-wrapper {
+  height: 300px;
+  width: 150px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  border: 1px dashed gray;
+  margin: 10px;
+}
+
+.title {
+  color: rgb(0, 128, 105);
+  font-size: 42px;
+  text-align: center;
+  font-family: fantasy;
+}
+
+.subtitle-wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+.subtitle {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  /* padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 7px;
+  padding-left: 9px; */
+}
+
+@keyframes example {
+  from {
+    background-color: red;
+    font-size: 20px;
+    color: white;
+  }
+  to {
+    background-color: yellow;
+    font-size: 14px;
+    color: black;
+  }
+}
+
+@keyframes example-two {
+  0% {
+    background-color: red;
+    font-size: 14px;
+  }
+  25% {
+    background-color: yellow;
+    font-size: 18px;
+  }
+  50% {
+    background-color: blue;
+    font-size: 10px;
+  }
+  100% {
+    background-color: green;
+    font-size: 24px;
+  }
+}
+
+.disabled-button {
+  background-color: gray;
+  border: none;
+  border-radius: 10px;
+  color: cadetblue;
+  opacity: 0.6;
+  height: 100px;
+  width: 200px;
+}
+
+.disabled-button:hover {
+  /* animation: example 1s linear; */
+  animation: example-two 4s linear;
+}
+
+.enabled-button {
+  background-color: green;
+  border-radius: 10px;
+  color: rgb(32, 29, 29);
+  height: 40px;
+  width: 70px;
+  transition: width 0.5s, height 0.5s;
+  /* 
+  transition-property
+  transition-duration
+  transition-timing-function
+  transition-delay */
+}
+
+.enabled-button:hover {
+  height: 45px;
+  width: 75px;
+}
+
+.image {
+  border-radius: 50%;
+  display: block;
+}
+
+.small-image {
+  width: 100px;
+}
+
+.large-image {
+  width: 300px;
+}
+
+.link {
+  border-bottom: 1px solid black;
+  padding-bottom: 3px;
+  text-decoration: none;
+  cursor: progress;
+}
+
+.page-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.right-sidebar {
+  background-color: blue;
+  height: 100%;
+  width: 200px;
+
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.text-input {
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.text-input::placeholder {
+  color: orange;
+  opacity: 0.8;
+}
+
+.text-input:hover {
+  background-color: yellow;
+}
+
+.text-input:focus {
+  background-color: orange;
+  color: white;
+}
+
+.middle-wrapper {
+  background-color: yellow;
+  border: 1px solid black;
+  margin: 3px;
+  position: relative;
+  height: 200px;
+}
+
+.one {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.two {
+  position: absolute;
+  top: 90px;
+  font-size: 20px;
+  left: 50%;
+  z-index: 10;
+}
+
+.three {
+  position: absolute;
+  top: 90px;
+  font-size: 20px;
+  z-index: 10;
+}
+
+/* animation-name
+animation-duration
+animation-timing-function
+animation-delay
+animation-iteration-count
+animation-direction
+
+animation-fill-mode */
+
+.flex-wrapper {
+  background-color: red;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
