@@ -57,6 +57,30 @@ app.post("/add-date", (req, res) => {
   }
 });
 
+app.get("/get-foods", (req, res) => {
+  try {
+    // Get all users from Mongo
+    database.getAllFoods().then((foods) => {
+      res.send(foods);
+    });
+  } catch (err) {
+    res.send(
+      `We have error: ${err.stack}. Sorry. We appreciate your patience while we work this out.`
+    );
+  }
+});
+
+app.post("/add-food", (req, res) => {
+  try {
+    const insertedId = database.addFood(req.body);
+    res.send(insertedId);
+  } catch (err) {
+    res.send(
+      `We have error: ${err.stack}. Sorry. We appreciate your patience while we work this out.`
+    );
+  }
+});
+
 app.listen(process.env.PORT || 3000, function () {
   console.log(
     "Express server listening on port %d in %s mode",

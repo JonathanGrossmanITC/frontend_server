@@ -14,6 +14,7 @@ client.connect().then((response) => {
     db = client.db(dbName);
     // Use the collection named "users"
     dates_collection = db.collection("dates");
+    food_collection = db.collection("food");
   } else {
     console.log("Problem connecting to MongoDB");
   }
@@ -31,5 +32,19 @@ const addDate = async (data) => {
   });
 };
 
+const getAllFoods = async () => {
+  all_db_food = await food_collection.find().toArray();
+  return all_db_food;
+};
+
+const addFood = async (data) => {
+  newFood = food_collection.insertOne(data);
+  newFood.then((response) => {
+    return response.insertedId;
+  });
+};
+
 exports.getAllDates = getAllDates;
 exports.addDate = addDate;
+exports.getAllFoods = getAllFoods;
+exports.addFood = addFood;
